@@ -1,0 +1,131 @@
+.container {
+  max-width: 550px;
+  border-left: 2px solid #008f8f;
+  border-right: 2px solid #008f8f;
+  border-bottom: 2px solid #008f8f;
+  border-radius: 4px;
+}
+
+.actual,
+.forecast {
+  border-radius: 4px;
+  border-top: 2px solid #008f8f;
+  background-color: white;
+}
+
+.heading {
+  font-size: 30px;
+  color: white;
+  background-color: #008f8f;
+  font-weight: 700;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+.heading-col {
+  margin-top: 15px;
+}
+.forecast-row {
+  border-bottom: 1px solid #008f8f;
+  margin-top: 20px;
+}
+.form-city {
+  font-size: 18px;
+  margin: 5px;
+}
+
+button {
+  margin-bottom: 0px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.weather-today {
+  font-size: 20px;
+  margin: 10px 5px;
+  font-weight: bold;
+}
+
+.city {
+  font-size: 35px;
+  transition: all ease-in-out;
+  font-weight: 700;
+  color: #f14c0f;
+  text-align: center;
+}
+
+.emoji-temperature {
+  font-size: 60px;
+  text-align: center;
+  vertical-align: center;
+}
+
+.celsius-fahrenheit {
+  font-size: 16px;
+  color: black;
+  vertical-align: top;
+  text-align: center;
+}
+
+a {
+  color: #0000ff;
+  text-decoration: none;
+}
+
+.min-max {
+  font-size: 16px;
+  text-align: center;
+}
+
+.date-information {
+  font-size: 16px;
+}
+
+.min-arrow {
+  color: blue;
+}
+
+.max-arrow {
+  color: red;
+}
+
+.main-icon {
+  font-size: 40px;
+  text-align: center;
+}
+
+.weather {
+  text-align: left;
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 27px;
+}
+
+.next-prevision {
+  font-size: 20px;
+  margin: 15px;
+}
+
+.emoji-prevision {
+  font-size: 45px;
+  margin-top: 10px;
+  vertical-align: center;
+}
+
+.forecast {
+  margin-top: 10px;
+}
+
+.city:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#description {
+  text-transform: capitalize;
+}
+
+.information {
+  background-color: rgb(241, 238, 238);
+}

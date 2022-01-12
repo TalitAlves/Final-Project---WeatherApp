@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Final Project</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/b65c4e277c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <div class="container">
+    <body>
+      <div class="row heading">
+        <div class="col">Weather Around The World</div>
+
+        
+          <form class="form-city" id="searching">
+            <input type="text" id="form-city" placeholder="Type your city" />
+            <button type="submit" class="btn btn-primary mb-3">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+    
+
+    
+        <div class="row">
+          <div class="col-6">
+              <div class="weather-today">Weather today: </div>
+
+          </div>
+          <div class="col"> 
+          <div class="date-information">
+                      
+             <span> <div class="date" id="actual-date">Sunday - August, 22nd</div>
+          </div></span>
+
+          <span >Last update:</span>
+          <span id="hour-infomation"> 11:51</span>
+        </div>
+        <p></p>
+      </div>
+
+          <div class="row information"> 
+              <div class="city" id="city">Barcelona</div>
+              <p></p>
+            <div class="col-7 ">
+                
+          <div class="row emoji-temperature">
+      
+            <div class="col-4">
+              <div class="main-icon"><img id="icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt=""></div>
+            </div>
+            <div class="col-4">
+              <div class="temperature-table">
+                <span class="temperature" id="temperature"> 28ºC</span>
+                
+                
+            </div>
+            </div>
+            <div class="col-4">
+              <span class="celsius-fahrenheit">
+                <a href="#" id="celsius">℃</a> |
+                <a href="#" id="fahrenheit">℉</a></span>
+
+            </div>
+          </div>
+          <div class="row description">
+            <div class="col">
+              <div class="weather" id="description">Sunny</div>
+            </div>
+            </div>         
+          </div>
+          <div class="col-5">
+              <div class="row row-cols-2 adcional-information">
+                  <div class="col" > Real Feel: </div>
+                  <div class="col" > <span id="realFeal">30</span><span>ºC</span></div>
+                  <div class="col" >Humidity</div>
+                  <div class="col left"> <span id="humidity"> 73</span> <span>%</span> </div>
+                  <div class="col ">Wind</div>
+                  <div class="col left"> <span id="wind">15 </span> <span>km/h </span> </div>
+                  <div class="col">Min</div>
+                  <div class="col">22ºC <i class="fas fa-long-arrow-alt-down min-arrow"> </i></div>
+                  <div class="col">Max</div>
+                  <div class="col">35ºC <i class="fas fa-long-arrow-alt-up max-arrow"></i></div>
+                  
+                </div>
+            </div>
+        </div>
+        
+    
+      
+    
+      <div class="row row-cols-4 forecast" >
+        <div class="col"> <div>12/01</div> <div>Wed </div></div>
+        <div class="col"><i class="fas fa-sun"></i></div>
+        <div class="col">Sunny</div>
+        <div class="col"><div> Min 12ºC</div> <div>Max 15ºC</div></div>
+        <div class="col"> <div>13/01</div> <div>Thu </div></div>
+        <div class="col"><i class="fas fa-sun"></i></div>
+        <div class="col">Sunny</div>
+        <div class="col"><div> Min 12ºC</div> <div>Max 15ºC</div></div>
+        <div class="col"> <div>13/01</div> <div>Fri </div></div>
+        <div class="col"><i class="fas fa-sun"></i></div>
+        <div class="col">Sunny</div>
+        <div class="col"><div> Min 12ºC</div> <div>Max 15ºC</div></div>
+        <div class="col"> <div>14/01</div> <div>Sat </div></div>
+        <div class="col"><i class="fas fa-sun"></i></div>
+        <div class="col">Sunny</div>
+        <div class="col"><div> Min 12ºC</div> <div>Max 15ºC</div></div>
+        <div class="col"> <div>15/01</div> <div>Sun </div></div>
+        <div class="col"><i class="fas fa-sun"></i></div>
+        <div class="col">Sunny</div>
+        <div class="col"><div> Min 12ºC</div> <div>Max 15ºC</div></div>
+        
+          
+        </div>
+      </div>
+
+      <script src="src/index.js"></script>
+    </body>
+  </div>
+</html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
