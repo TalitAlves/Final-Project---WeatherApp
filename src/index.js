@@ -80,6 +80,14 @@ function searchCity(city) {
   axios.get(apiURL).then(showForecast);
 }
 
+function getCoord(coordinates) {
+  console.log(coordinates);
+  let apiURL5Days = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=44cc1ee1b88cd46d5888ef7f472132d0
+&unit+metric`;
+
+  axios(apiURL5Days).then(showForecast5Days);
+}
+
 function showForecast(response) {
   celsiusTemperature = Math.round(response.data.main.temp);
 
@@ -109,18 +117,9 @@ function showForecast(response) {
   );
 
   console.log(response);
-}
 
-/*function getLatitude(response) {
-  let latitude = response.data.coord.lat;
-  console.log(latitude);
-  return latitude;
+  getCoord(response.data.coord);
 }
-function getLongitude(response) {
-  let longitude = response.data.coord.lon;
-  console.log(longitude);
-  return longitude;
-}*/
 
 function showForecast5Days() {
   let forecastElement = document.querySelector("#forecast");
@@ -147,12 +146,3 @@ function forecastNextDays(response) {
   let firstDayTemperature = document.querySelector("#tempDay0");
   firstDayTemperature.innerHTML = response.daily[0].temp.day;
 }
-
-/*function forecast5Days() {
-  let apiURL5Days =
-    "https://api.openweathermap.org/data/2.5/onecall?lat=48.8534&lon=2.3488&exclude=current,minutely,hourly,alerts&appid=44cc1ee1b88cd46d5888ef7f472132d0";
-
-  axios(apiURL5Days).then(forecastNextDays);
-
-  console.log(response);
-}*/
