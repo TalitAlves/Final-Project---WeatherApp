@@ -78,9 +78,6 @@ fahrenheit.addEventListener("click", changeToFahrenheit);
 function searchCity(city) {
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=8b91fc8da1e02bf608ec0e58160cf792&units=metric`;
   axios.get(apiURL).then(showForecast);
-  axios.get(apiURL).then(updateEmojiWeather);
-  //axios.get(apiURL).then(getLatitude);
-  //axios.get(apiURL).then(getLongitude);
 }
 
 function showForecast(response) {
@@ -103,32 +100,59 @@ function showForecast(response) {
 
   let wind = document.querySelector("#wind");
   wind.innerHTML = Math.round(response.data.wind.speed);
-}
 
-/*function getLatitude(response) {
- // let latitude = response.data.coord.lat;
-
-  return latitude;
-}*/
-
-function getLongitude(response) {
-  let longitude = response.data.coord.lon;
-
-  return longitude;
-}
-
-function updateEmojiWeather(response) {
-  let iconCode = response.data.weather[0].icon;
   let iconElement = document.querySelector("#icon");
+  let iconCode = response.data.weather[0].icon;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${iconCode}@2x.png`
   );
+
+  console.log(response);
 }
 
-function forecast5Days(latitude, longitude) {
-  let apiURL5Days = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude={part}&appid=0e49051742904728363d076005947b7c`;
+/*function getLatitude(response) {
+  let latitude = response.data.coord.lat;
+  console.log(latitude);
+  return latitude;
+}
+function getLongitude(response) {
+  let longitude = response.data.coord.lon;
+  console.log(longitude);
+  return longitude;
+}*/
+
+function showForecast5Days() {
+  let forecastElement = document.querySelector("#forecast");
+  let day = ["14/01", "15/01", "16/01", "17/01"];
+  let forecastHTML = " ";
+  day.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+         <div class="col" id="forecast-date"> <span>Wed - </span> <span >${day}</span> </div>
+        <div class="col" > <span id="forecast-temperature"> 15 </span> ºC</div>
+        <div class="col" id="forecast-description">Sunny</div>
+        <div class="col"> Min <span id="forecast-min">12</span> ºC<div>Max <span id="forecast-max"> 15 </span>ºC</div>
+             
+          </div>`;
+
+    forecastElement.innerHTML = forecastHTML;
+  });
+}
+
+showForecast5Days();
+
+function forecastNextDays(response) {
+  let firstDayTemperature = document.querySelector("#tempDay0");
+  firstDayTemperature.innerHTML = response.daily[0].temp.day;
+}
+
+/*function forecast5Days() {
+  let apiURL5Days =
+    "https://api.openweathermap.org/data/2.5/onecall?lat=48.8534&lon=2.3488&exclude=current,minutely,hourly,alerts&appid=44cc1ee1b88cd46d5888ef7f472132d0";
+
   axios(apiURL5Days).then(forecastNextDays);
 
-  console.log(apiURL5Days);
-}
+  console.log(response);
+}*/
