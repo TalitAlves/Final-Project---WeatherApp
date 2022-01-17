@@ -141,6 +141,10 @@ a {
   text-decoration: solid;
 }
 
+.box {
+  margin-top: 5px;
+}
+
 .information {
   background-color: rgb(241, 238, 238);
 }

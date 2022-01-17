@@ -139,17 +139,20 @@ function showForecast5Days(response) {
       forecastHTML =
         forecastHTML +
         ` 
-         <div class="col col-bos"> ${forecastDate(forecastDay.dt)} </div>
-        <div class="col" id="forecast-temperature" > ${Math.round(
+  
+        
+         <div class="col-3 box"> ${forecastDate(forecastDay.dt)} </div>
+        <div class="col-2 box" id="forecast-temperature" > ${Math.round(
           forecastDay.temp.day
         )}ºC</div>
-        <div class="col" id="forecast-description" >${
+        <div class="col-4 box"  id="forecast-description" >${
           forecastDay.weather[0].description
         }</div>
-        <div class="col">  ${Math.round(forecastDay.temp.min)}ºC - ${Math.round(
-          forecastDay.temp.max
-        )}ºC</div>
-             
+        <div class="col-3 box">  ${Math.round(
+          forecastDay.temp.min
+        )}ºC - ${Math.round(forecastDay.temp.max)}ºC</div>
+        
+        
           </div>`;
 
       forecastElement.innerHTML = forecastHTML;
