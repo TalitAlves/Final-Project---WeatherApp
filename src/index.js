@@ -81,9 +81,8 @@ function searchCity(city) {
 }
 
 function getCoord(coordinates) {
-  console.log(coordinates);
   let apiURL5Days = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=44cc1ee1b88cd46d5888ef7f472132d0
-&unit+metric`;
+&units=metric`;
 
   axios(apiURL5Days).then(showForecast5Days);
 }
@@ -116,31 +115,65 @@ function showForecast(response) {
     `http://openweathermap.org/img/wn/${iconCode}@2x.png`
   );
 
-  console.log(response);
-
   getCoord(response.data.coord);
 }
 
-function showForecast5Days() {
+function forecastDate(timestamp) {
+  let date = new Date(timestamp * 1000);
+
+  let dayOfMonth = date.getDate();
+  let monthTitle = [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+  ];
+  let month = monthTitle[date.getMonth()];
+
+  let weekDay = ["Sun", "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"];
+  let days = weekDay[date.getDay()];
+  let fullDate = `${days} - ${dayOfMonth}/${month}`;
+
+  return fullDate;
+}
+
+function showForecast5Days(response) {
+  console.log(response);
   let forecastElement = document.querySelector("#forecast");
-  let day = ["14/01", "15/01", "16/01", "17/01"];
+
+  let forecastData = response.data.daily;
+
   let forecastHTML = " ";
-  day.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` 
-         <div class="col" id="forecast-date"> <span>Wed - </span> <span >${day}</span> </div>
-        <div class="col" > <span id="forecast-temperature"> 15 </span> ºC</div>
-        <div class="col" id="forecast-description">Sunny</div>
-        <div class="col"> Min <span id="forecast-min">12</span> ºC<div>Max <span id="forecast-max"> 15 </span>ºC</div>
+  forecastData.forEach(function (forecastDay, index) {
+    if (index >= 1 && index <= 5) {
+      forecastHTML =
+        forecastHTML +
+        ` 
+         <div class="col"> ${forecastDate(forecastDay.dt)} </div>
+        <div class="col" id="forecast-temperature" > ${Math.round(
+          forecastDay.temp.day
+        )}ºC</div>
+        <div class="col" id="forecast-description" >${
+          forecastDay.weather[0].description
+        }</div>
+        <div class="col">  ${Math.round(forecastDay.temp.min)}ºC - ${Math.round(
+          forecastDay.temp.max
+        )}ºC</div>
              
           </div>`;
 
-    forecastElement.innerHTML = forecastHTML;
+      forecastElement.innerHTML = forecastHTML;
+    }
   });
 }
-
-showForecast5Days();
 
 function forecastNextDays(response) {
   let firstDayTemperature = document.querySelector("#tempDay0");

@@ -113,6 +113,10 @@ a {
   vertical-align: center;
 }
 
+.row-cols-4 {
+  font-size: 16px;
+}
+
 .forecast {
   margin-top: 10px;
 }
@@ -122,8 +126,19 @@ a {
   cursor: pointer;
 }
 
-#description {
+#description::first-letter,
+#forecast-description::first-letter {
   text-transform: capitalize;
+}
+
+#forecast-temperature {
+  text-align: center;
+}
+
+#forecast-box,
+#forecast {
+  text-align: center;
+  margin-top: 5px;
 }
 
 .information {
