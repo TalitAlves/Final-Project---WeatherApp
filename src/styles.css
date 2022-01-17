@@ -96,7 +96,7 @@ a {
 }
 
 .weather {
-  text-align: left;
+  text-align: center;
   font-size: 22px;
   font-weight: bold;
   margin-left: 27px;
@@ -117,6 +117,9 @@ a {
   font-size: 16px;
 }
 
+.row-description {
+  text-align: center;
+}
 .forecast {
   margin-top: 10px;
 }
@@ -131,14 +134,11 @@ a {
   text-transform: capitalize;
 }
 
-#forecast-temperature {
-  text-align: center;
-}
-
 #forecast-box,
 #forecast {
   text-align: center;
   margin-top: 5px;
+  text-decoration: solid;
 }
 
 .information {

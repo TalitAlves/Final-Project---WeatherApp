@@ -57,24 +57,6 @@ function actualCity(event) {
 let formCity = document.querySelector("#searching");
 formCity.addEventListener("submit", actualCity);
 
-//change celsius-fahrenheit
-function changeToCelsius() {
-  let temperatureInCelsius = document.querySelector("#temperature");
-  temperatureInCelsius.innerHTML = `${celsiusTemperature}ºC`;
-}
-
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", changeToCelsius);
-
-function changeToFahrenheit() {
-  let temperatureElement = document.querySelector("#temperature");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = `${Math.round(fahrenheitTemperature)}ºF`;
-}
-
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", changeToFahrenheit);
-
 function searchCity(city) {
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=8b91fc8da1e02bf608ec0e58160cf792&units=metric`;
   axios.get(apiURL).then(showForecast);
