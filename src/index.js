@@ -139,7 +139,7 @@ function showForecast5Days(response) {
       forecastHTML =
         forecastHTML +
         ` 
-         <div class="col"> ${forecastDate(forecastDay.dt)} </div>
+         <div class="col col-bos"> ${forecastDate(forecastDay.dt)} </div>
         <div class="col" id="forecast-temperature" > ${Math.round(
           forecastDay.temp.day
         )}ºC</div>
