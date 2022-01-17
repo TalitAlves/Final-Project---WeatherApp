@@ -71,6 +71,8 @@ button {
 a {
   color: #0000ff;
   text-decoration: none;
+  margin-left: 130px;
+  font-size: 15px;
 }
 
 .min-max {
