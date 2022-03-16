@@ -1,9 +1,17 @@
-.container {
-  max-width: 550px;
-  border-left: 2px solid #008f8f;
-  border-right: 2px solid #008f8f;
-  border-bottom: 2px solid #008f8f;
+body {
+  background-color: #e8ffc2;
+}
+h1 {
+  text-align: center;
+  background-color: #0e185f;
+  color: #e8ffc2;
+  vertical-align: center;
+  padding: 15px;
+}
+.mean {
+  border: 2px solid #008f8f;
   border-radius: 4px;
+  background-color: aliceblue;
 }
 
 .actual,
@@ -16,11 +24,11 @@
 .heading {
   font-size: 30px;
   color: white;
-  background-color: #008f8f;
-  font-weight: 700;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 10px;
   border-radius: 4px;
+  border: 2px solid #0e185f;
+  background-color: rgb(14, 24, 95);
+  padding: 10px;
 }
 
 .heading-col {
@@ -33,15 +41,10 @@
 .form-city {
   font-size: 18px;
   margin: 5px;
+  vertical-align: center;
 }
 
-button {
-  margin-bottom: 0px;
-  margin-top: 10px;
-  font-size: 15px;
-}
-
-.weather-today {
+weather-today {
   font-size: 20px;
   margin: 10px 5px;
   font-weight: bold;
