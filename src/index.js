@@ -102,27 +102,9 @@ function showForecast(response) {
 
 function forecastDate(timestamp) {
   let date = new Date(timestamp * 1000);
-
-  let dayOfMonth = date.getDate();
-  let monthTitle = [
-    "01",
-    "02",
-    "03",
-    "04",
-    "05",
-    "06",
-    "07",
-    "08",
-    "09",
-    "10",
-    "11",
-    "12",
-  ];
-  let month = monthTitle[date.getMonth()];
-
   let weekDay = ["Sun", "Mon", "Tus", "Wed", "Thu", "Fri", "Sat"];
   let days = weekDay[date.getDay()];
-  let fullDate = `${days} - ${dayOfMonth}/${month}`;
+  let fullDate = days;
 
   return fullDate;
 }
@@ -131,33 +113,69 @@ function showForecast5Days(response) {
   console.log(response);
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastData = response.data.daily;
+  let forecastHTML = ``;
 
-  let forecastHTML = " ";
-  forecastData.forEach(function (forecastDay, index) {
-    if (index >= 1 && index <= 5) {
-      forecastHTML =
-        forecastHTML +
-        ` 
-  
-        
-         <div class="col-3 box"> ${forecastDate(forecastDay.dt)} </div>
-        <div class="col-2 box" id="forecast-temperature" > ${Math.round(
-          forecastDay.temp.day
-        )}ºC</div>
-        <div class="col-4 box"  id="forecast-description" >${
-          forecastDay.weather[0].description
-        }</div>
-        <div class="col-3 box">  ${Math.round(
-          forecastDay.temp.min
-        )}ºC - ${Math.round(forecastDay.temp.max)}ºC</div>
-        
-        
-          </div>`;
+  let days = ["Thus", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col" id="forecast-date">
+                <div id="weekDay">Fri</div>
 
-      forecastElement.innerHTML = forecastHTML;
-    }
+                <div>
+                  <span id="temperature5Days">15</span><span>ºC</span>
+                  </div>
+                  <div>
+                    <img
+                      id="icon5Days"
+                      src="http://openweathermap.org/img/wn/10d@2x.png"
+                      alt=""
+                      width="60px"
+                    />
+                  </div>
+                  <div id="forecast-description">Sunny</div>
+                  <div>
+                    <span class="max" id="max">15</span> <span>º </span>
+                    <span class="min" id="min">12</span> <span>º</span>
+                  </div>
+                  </div>`;
+
+    let dtAPI = response.data.daily[1].dt;
+    let weekDay = document.querySelector("#weekDay");
+    weekDay.innerHTML = `${forecastDate(dtAPI)}`;
+
+    let temperature5Days = document.querySelector("#temperature5Days");
+    temperature5Days.innerHTML = Math.round(response.data.daily[1].temp.day);
+    let icon5Days = document.querySelector("#icon5Days");
+    icon5DaysCode = response.data.daily[1].weather[0].icon;
+    icon5Days.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${icon5DaysCode}@2x.png`
+    );
+    let min5Days = document.querySelector("#min");
+    min5Days.innerHTML = Math.round(response.data.daily[1].temp.min);
+    let max5Days = document.querySelector("#max");
+    max5Days.innerHTML = Math.round(response.data.daily[1].temp.max);
   });
+  forecastHTML = forecastHTML;
+  forecastElement.innerHTML = forecastHTML;
+
+  let dtAPI = response.data.daily[1].dt;
+  let weekDay = document.querySelector("#weekDay");
+  weekDay.innerHTML = `${forecastDate(dtAPI)}`;
+
+  let temperature5Days = document.querySelector("#temperature5Days");
+  temperature5Days.innerHTML = Math.round(response.data.daily[1].temp.day);
+  let icon5Days = document.querySelector("#icon5Days");
+  icon5DaysCode = response.data.daily[1].weather[0].icon;
+  icon5Days.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${icon5DaysCode}@2x.png`
+  );
+  let min5Days = document.querySelector("#min");
+  min5Days.innerHTML = Math.round(response.data.daily[1].temp.min);
+  let max5Days = document.querySelector("#max");
+  max5Days.innerHTML = Math.round(response.data.daily[1].temp.max);
 }
 
 function forecastNextDays(response) {

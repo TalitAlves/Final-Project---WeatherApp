@@ -4,7 +4,7 @@ body {
 h1 {
   text-align: center;
   background-color: #0e185f;
-  color: #e8ffc2;
+  color: white;
   padding: 15px;
   width: 100%;
 }
@@ -12,7 +12,7 @@ h1 {
   border: 2px solid #008f8f;
   border-radius: 4px;
   background-color: aliceblue;
-  width: 600px;
+  width: 530px;
   align-items: center;
   display: block;
   margin: auto;
@@ -33,7 +33,6 @@ h1 {
   width: 580px;
   margin-top: 10px;
   margin-bottom: 15px;
-  text-align: center;
 }
 
 .form-city {
@@ -46,6 +45,18 @@ h1 {
   transition: all ease-in-out;
   font-weight: 700;
   color: #0e185f;
+}
+
+.box-weather {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0px;
+  margin-bottom: 10px;
+  background-color: rgb(210, 218, 226, 0.5);
+}
+
+.forecast {
+  margin: 0px;
 }
 
 .date-information {
@@ -68,6 +79,7 @@ h1 {
   color: black;
   margin-top: 20px;
   text-align: left;
+  vertical-align: text-top;
 }
 
 .main-icon {
@@ -77,17 +89,6 @@ h1 {
 
 .weather {
   font-weight: 700;
-}
-
-.next-prevision {
-  font-size: 20px;
-  margin: 15px;
-}
-
-.emoji-prevision {
-  font-size: 45px;
-  margin-top: 10px;
-  vertical-align: center;
 }
 
 .city:hover {
@@ -100,9 +101,15 @@ h1 {
   text-transform: capitalize;
 }
 
-#forecast-box,
 #forecast {
   text-align: center;
   margin-top: 5px;
-  text-decoration: solid;
+  font-size: 14px;
+}
+.day {
+  text-decoration: underline;
+  font-weight: bold;
+}
+.min {
+  color: grey;
 }

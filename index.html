@@ -48,56 +48,50 @@
             </div>
             <p></p>
           </div>
+        </div>
 
-          <div class="row">
-            <div class="col-6">
-              <div class="row emoji-temperature">
-                <div class="col-4">
-                  <div class="main-icon">
-                    <img
-                      id="icon"
-                      src="http://openweathermap.org/img/wn/10d@2x.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div class="col-3">
-                  <span id="temperature"> 28</span>
-                </div>
-                <div class="col-2 celsius">ºC</div>
+        <div class="row box-weather">
+          <div class="col-6">
+            <div class="main-icon">
+              <img
+                id="icon"
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt=""
+              />
+              <span id="temperature"> 28</span>
+              <span class="celsius">ºC</span>
+            </div>
+          </div>
+
+          <div class="col-6 more-information">
+            <div class="weather" id="description">Sunny</div>
+            <div>Real Feel: <span id="realFeal">30</span><span>ºC</span></div>
+            <div>Humidity: <span id="humidity"> 73</span> <span>%</span></div>
+            <div>Wind: <span id="wind">15 </span> <span>km/h </span></div>
+          </div>
+        </div>
+
+        <div class="row forecast" id="forecast">
+          <div class="col" id="forecast-date">
+            <div class="day" id="weekDay">Tus</div>
+
+            <div>
+              <span id="temperature5Days">15</span><span>ºC</span>
+              <div></div>
+              <div>
+                <img
+                  id="icon5Days"
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  alt=""
+                  width="60px"
+                />
               </div>
-                             
-                
+              <div id="forecast-description">Sunny</div>
+              <div>
+                <span class="max" id="max">15</span> <span>º </span>
+                <span class="min" id="min">12</span> <span>º</span>
+              </div>
             </div>
-
-            <div class="col-3 more-information">
-               <div class="weather" id="description">Sunny</div>
-               <div>Real Feel:
-                 <span id="realFeal">30</span><span>ºC</span>
-                </div>
-                <div>Humidity:
-                <span id="humidity"> 73</span> <span>%</span>
-                </div>
-                <div>Wind:
-                  <span id="wind">15 </span> <span>km/h </span>
-                </div>       
-            
-          </div>
-
-          <div class="row" id="forecast-box">
-            <div class="col-3">Date</div>
-            <div class="col-2">Temp</div>
-            <div class="col-4">Description</div>
-            <div class="col-3">Min - Max</div>
-          </div>
-
-          <div class="row" id="forecast">
-            <div class="col" id="forecast-date">
-              <span>12/01</span> <span>- Wed </span>
-            </div>
-            <div class="col" id="forecast-temperature">15ºC</div>
-            <div class="col" id="forecast-description">Sunny</div>
-            <div class="col">12ºC / 15ºC</div>
           </div>
         </div>
       </div>
