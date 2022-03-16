@@ -76,7 +76,7 @@ function showForecast(response) {
   currentyCity.innerHTML = response.data.name;
 
   let currentTemperature = document.querySelector("#temperature");
-  currentTemperature.innerHTML = `${celsiusTemperature}ºC`;
+  currentTemperature.innerHTML = `${celsiusTemperature}`;
 
   let currentDescriprion = document.querySelector("#description");
   currentDescriprion.innerHTML = response.data.weather[0].description;
