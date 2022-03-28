@@ -36,7 +36,11 @@ let actualDate = document.querySelector("#actual-date");
 actualDate.innerHTML = `${day} - ${month}, ${dayOfMonth} - ${year}`;
 
 let actualHour = document.querySelector("#hour-infomation");
-actualHour.innerHTML = `${hour}:${minutes}`;
+if (minutes <= 9) {
+  actualHour.innerHTML = `${hour}:0${minutes}`;
+} else {
+  actualHour.innerHTML = `${hour}:${minutes}`;
+}
 
 let celsiusTemperature = null;
 searchCity("London");
