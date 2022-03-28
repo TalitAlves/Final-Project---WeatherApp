@@ -31,13 +31,18 @@ h1 {
   display: block;
   margin: auto;
   width: 580px;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin-top: 0px;
+  margin-bottom: -1px;
+  align-items: center;
 }
 
 .form-city {
   font-size: 18px;
   margin: 5px;
+}
+
+.btn-primary {
+  font-size: 15px;
 }
 
 .city {
@@ -47,16 +52,22 @@ h1 {
   color: #0e185f;
 }
 
+.main-information {
+  background-color: rgb(210, 218, 226, 0.8);
+  margin: 0px;
+}
+
 .box-weather {
   padding-left: 10px;
   padding-right: 10px;
   margin: 0px;
-  margin-bottom: 10px;
-  background-color: rgb(210, 218, 226, 0.5);
+  margin-bottom: 17px;
+  background-color: rgb(210, 218, 226, 0.8);
 }
 
 .forecast {
   margin: 0px;
+  background-color: rgb(210, 218, 226, 0.8);
 }
 
 .date-information {
